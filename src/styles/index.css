@@ -1,0 +1,30 @@
+:root {
+  --backgroundColor: #F6F6F6;
+  --fontColor: #373745;
+  --green: #60C2AA;
+  --lightgreen: #CFEDE6;
+  --red: #EB0057;
+  --lightred: #F3BBD0;
+  --lightgrey: #F6F6F6;
+  --grey: #898993;
+  --shadow: #2c397933;
+  --timerColor: #EDEDED;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  background: var(--lightgrey);
+  font-family: Roboto, sans-serif;
+}
+
+img {
+  display: block;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
