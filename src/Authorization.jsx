@@ -15,7 +15,12 @@ export default function Authorization() {
         var p = document.getElementById('passwordInput').value;
         if (l == authInfo.login && p == authInfo.password) {
             return link('/main');
-        } return;
+        } else{
+            document.getElementById('loginInput').style.borderColor = 'var (--red)';
+            document.getElementById('passwordInput').style.borderColor = 'var (--red)';
+            document.getElementsByClassName('modal_textRed')[0].innerHTML = 'Неверный логин';
+            document.getElementsByClassName('modal_textRed')[1].innerHTML = 'Неверный пароль';
+        };
     }
 
     return (
@@ -25,7 +30,9 @@ export default function Authorization() {
                     <img className="modal_img" src="auth.svg" />
                     <p className="modal_text">Войдите в игру</p>
                     <input className='modal_input' id='loginInput' placeholder='Логин' />
-                    <input className='modal_input' id='passwordInput' placeholder='Пароль'></input>
+                    <p className='modal_textRed'/>
+                    <input className='modal_input' id='passwordInput' placeholder='Пароль'/>
+                    <p className='modal_textRed'/>
                         <button className="modal_butrestart" onClick={Authorize}>Войти</button>
                 </div>
             </div>

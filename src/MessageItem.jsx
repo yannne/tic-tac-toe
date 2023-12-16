@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 
 const MessageItem = ({info}) => {
+
     if (info.fullName == null && info.nowTime == null && info.message == null) return null;
     else
         return (

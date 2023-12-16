@@ -4,20 +4,23 @@ import MessageItem from "./MessageItem";
 export default function Chat({activityPlayers, startGame}) {
 
     const [messages, setMessages] = useState([
-        {fullName: null, nowTime: null, message: null, id: 0}
+        {fullName: null, nowTime: null, message: null, color: null, id: 0}
     ])
 
+    const player = activityPlayers();
+
     useEffect (() => {
-        if (!startGame) setMessages([{fullName: null, nowTime: null, message: null, id: 0}])
+        if (!startGame) setMessages([{fullName: null, nowTime: null, message: null, color: null, id: 0}])
     }, [startGame])
 
     function addMessage() {
         var time = new Date;
         var textInput = document.getElementById('chat-input').value;
         const newMessages = {
-            fullName : activityPlayers,
-            nowTime : time.getTime(),
+            fullName : player.name,
+            nowTime : time.getHours()+":"+time.getMinutes(),
             message : textInput,
+            color : player.color,
             id: Date.now()
         }
         setMessages([...messages, newMessages]);
