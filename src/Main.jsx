@@ -93,6 +93,7 @@ export default function Main() {
     }
 
     function clickStart() {
+        restartGame()
         setStartGame(true)
         document.getElementById('step').innerHTML = "Ходит " + players[0].name;
     }
